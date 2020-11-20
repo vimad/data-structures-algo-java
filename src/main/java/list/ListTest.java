@@ -15,5 +15,9 @@ public class ListTest {
         list.delete(4);
         list.printList();
         System.out.println(list.getSize());
+        list.reverse();
+        list.printList();
+        list.reverseRecursive();
+        list.printList();
     }
 }

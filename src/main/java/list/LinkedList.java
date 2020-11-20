@@ -75,4 +75,32 @@ public class LinkedList {
     public int getSize() {
         return size;
     }
+
+    public void reverse() {
+        Node p = head;
+        Node q = null;
+        Node r = null;
+
+        while (p != null) {
+            r = q;
+            q = p;
+            p = p.next;
+            q.next = r;
+        }
+        head = q;
+    }
+
+    public void reverseRecursive() {
+        rRecursive(head, head.next);
+    }
+
+    private void rRecursive(Node first, Node next) {
+        if (next != null) {
+            rRecursive(next, next.next);
+            next.next = first;
+            first.next = null;
+        } else {
+            head = first;
+        }
+    }
 }
